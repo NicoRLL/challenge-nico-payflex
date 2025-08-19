@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #033347;
+  --color-feature-bg: #0B3A4F;
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+
+  body {
+    @apply bg-white text-brand antialiased;
+    overflow-x: clip;          
+    text-wrap: pretty;         
+  }
+
+  img, svg, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;          
+  }
+
+  * { word-break: break-word; overflow-wrap: anywhere; }
+}
+
+@layer utilities {
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .clients-marquee {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clients-track {
+    display: flex;
+    width: max-content;
+    gap: 2.5rem;
+    animation: marquee 22s linear infinite;
+    will-change: transform;
+  }
+
+  .clients-group {
+    display: flex;
+    gap: 2.5rem;
+    flex: 0 0 auto;
+    align-items: center;
+  }
+
+  .logo-simple { 
+    @apply h-10 md:h-12 opacity-80 transition-opacity; 
+  }
+  .logo-simple:hover { opacity: 1; }
+
+  .clients-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%; right: 50%;
+    margin-left: -50vw; margin-right: -50vw;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  @supports (width: 100dvw) {
+    .clients-bleed {
+      width: 100dvw;
+      margin-left: -50dvw;
+      margin-right: -50dvw;
+      max-width: 100dvw;
+    }
+  }
+}
