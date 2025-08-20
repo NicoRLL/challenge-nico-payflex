@@ -24,7 +24,7 @@ export default function Clients() {
 
   const onImgLoad = () => {
     loadedCount.current += 1;
-    if (loadedCount.current >= logos.length) setLoaded(true);
+    if (loadedCount.gicurrent >= logos.length) setLoaded(true);
   };
 
   useLayoutEffect(() => {
