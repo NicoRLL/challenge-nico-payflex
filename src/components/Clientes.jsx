@@ -5,7 +5,7 @@ const logos = [
   { src: "/clientes/alamano.png", alt: "Alamano" },
   { src: "/clientes/avenida.png", alt: "Avenida" },
   { src: "/clientes/cataf-rey.png", alt: "Cataf-Rey" },
-  { src: "/clientes/costa-azul.png", alt: "Costa Azul" },
+  { src: "/clientes/costa-azul.svg", alt: "Costa Azul" },
   { src: "/clientes/GlobalUrbanTravel.png", alt: "Global Urban Travel" },
   { src: "/clientes/hertz.png", alt: "Hertz" },
   { src: "/clientes/paselibre.png", alt: "Paselibre" },
@@ -20,7 +20,7 @@ export default function Clients() {
   const [loaded, setLoaded] = useState(false);
   const loadedCount = useRef(0);
 
-  const SPEED = 120;
+  const SPEED = 240;
 
   const onImgLoad = () => {
     loadedCount.current += 1;
